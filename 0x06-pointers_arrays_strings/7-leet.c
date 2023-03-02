@@ -1,25 +1,28 @@
 #include "main.h"
 
 /**
- * leet - encodes a string
- * @n: the string required
+ * leet - encodes a string in 1337
+ * @s: string to be encoded
  *
- * Return: the encoded string
+ * Return: the resulting string;
  */
-char *leet(char *n)
+char *leet(char *s)
 {
 	int i, j;
 
-	int tokens[] = {65, 69, 79, 84, 76};
-	int repl[] = {4, 3, 0, 7, 1};
-	int tokens_len = 5;
+	char *a = "aAeEoOtTlL";
+	char *b = "4433007711";
 
-	for (i = 0; n[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < tokens_len; j++)
+		for (j = 0; j < 10; j++)
 		{
-			if (n[i] == tokens[j] || n[i] == tokens[j] + 32)
-				n[i] = repl[j] + 48;
+			if (s[i] == a[j])
+			{
+				s[i] = b[j];
+			}
 		}
 	}
 
+	return (s);
+}
